@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="abby_view" model="ir.ui.view">
+            <field name="name">Abby</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="96"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Abby Settings" string="Abby Settings"
+                         data-key="abby_settings">
+                        <h2>Abby Settings</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box" title="set abby settings info">
+                                <div class="o_setting_right_pane">
+                                    <div>
+
+                                        <div class="content-group mt16">
+                                            <label string="Server URL" for="serverurl"/>
+                                            <field name="serverurl"/>
+                                        </div>
+                                        <div>
+                                            <label string="Application ID" for="applicationid"/>
+                                            <field name="applicationid"/>
+                                        </div>
+                                        <div>
+                                            <label string="Password" for="password"/>
+                                            <field name="password"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

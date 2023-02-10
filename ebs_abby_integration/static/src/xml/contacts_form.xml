@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--  <template xml:space="preserve">-->
+<!--        <t t-extend="ListView.buttons" t-name="PartnerListView.buttons">-->
+<!--              <t t-jquery="button.o_list_button_add" t-operation="after">-->
+<!--                <button class="btn btn-primary oe_action_button" type="button" accesskey="f">-->
+<!--                    New Button-->
+<!--                </button>-->
+<!--              </t>-->
+<!--        </t>-->
+<!--  </template>-->
+
+
+    <template t-name="sacncard.ListView.buttons" t-inherit="ListView.buttons" t-inherit-mode="extension">
+         <t t-jquery="button.o_list_button_add" t-operation="after">
+            <button type="button" t-attf-class="btn btn-secondary o_documents_kanban_spreadsheet" disabled="disabled">
+                Create Spreadsheet
+            </button>
+        </t>
+    </template>
+</odoo>

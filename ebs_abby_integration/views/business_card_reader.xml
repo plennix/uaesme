@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="BCRWizard" model="ir.ui.view">
+        <field name="name">bcr.wizard</field>
+        <field name="model">bcr.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="BCRimage" widget='image' class="oe_avatar"
+                           options='{"preview_image": "image_medium"}' style="margin-right:16px;"/>
+                </sheet>
+                <footer>
+                    <button name="read_create_contact" string="Process The Image" type="object"
+                            class="oe_highlight"/>
+                    <button name="Cancel" special="cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="bcr_wizard"
+                name="Read business card"
+                res_model="bcr.wizard"
+                view_mode="form"
+                target="new"
+                />
+
+    <menuitem
+            name="Scan Business Card"
+            parent="contacts.menu_contacts"
+            action="bcr_wizard"
+            id="class_menu_id"/>
+
+<!--   <record id="contacts_form_view_changes" model="ir.ui.view">-->
+<!--            <field name="name">contacts.form.view.changes</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--&lt;!&ndash;            <filed name="mode">extension</filed>&ndash;&gt;-->
+<!--            <field name="priority">23</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//form//sheet" position="before">-->
+<!--                    <header>-->
+<!--                        <button name="%(ebs_abby_integration.bcr_wizard)d" string="SCAN BC" type="action" class="btn btn-primary"/>-->
+<!--                    </header>-->
+<!--                </xpath>-->
+
+<!--            </field>-->
+<!--   </record>-->
+    </data>
+</odoo>
